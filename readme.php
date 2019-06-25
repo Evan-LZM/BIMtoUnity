@@ -1,5 +1,5 @@
 <?php
-    $currentPath=__DIR__.'\woodsideData';
+    $currentPath=__DIR__.'/woodsideData';
     $fileresult=scandir($currentPath);
     unset($fileresult[0]);
     unset($fileresult[1]);
@@ -7,7 +7,7 @@
     $filecount=count($fileresult);
 
     for($i=0;$i<$filecount;$i++){
-        $path=$currentPath.'\\'.$fileresult[$i];
+        $path=$currentPath.'//'.$fileresult[$i];
         $myFile=fopen($path,"r") or die ("Could not open file");
         $str=fread($myFile, filesize($path));
         echo "?TableName:".$fileresult[$i].$str;
